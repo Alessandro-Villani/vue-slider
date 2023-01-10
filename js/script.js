@@ -28,8 +28,10 @@ const app = Vue.createApp({
         goTo(target){
             if(target === 'next'){
                 this.currentIndex = this.currentIndex === this.data.length - 1 ? 0 : ++this.currentIndex;
-            }else{
+            }else if (target === 'previous'){
                 this.currentIndex = this.currentIndex === 0 ? this.data.length - 1 : --this.currentIndex;
+            }else {
+                this.currentIndex = target;
             }
         }
     }

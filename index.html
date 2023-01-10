@@ -30,7 +30,7 @@
             <div id="carousel-thumbnail-container">
                 <div class="arrow up" @click="goTo('previous')"><i class="fa-solid fa-angle-up"></i></div>
                 <div class="thumbnails">
-                    <div v-for="(pic, i) in data" class="thumbnail" :class="{'selected' : currentIndex === i}">
+                    <div v-for="(pic, i) in data" class="thumbnail" :class="{'selected' : currentIndex === i}" @click="goTo(i)">
                         <img :src="pic.image" alt="pic.title">
                     </div>
                 </div>
