@@ -4,6 +4,11 @@
     border: 1px dashed black;
 }
 
+/*! GENERICS */
+body{
+    background-color: rgb(10, 7, 43);
+}
+
 /*! UTILS */
 
 .thumbnail.selected{

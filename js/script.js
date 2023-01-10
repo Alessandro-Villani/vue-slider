@@ -33,8 +33,18 @@ const app = Vue.createApp({
             }else {
                 this.currentIndex = target;
             }
+        },
+        autoplay(){
+            setInterval(() => {
+                this.goTo('next');
+            }, 3000)
         }
+    },
+    mounted(){
+        this.autoplay()
     }
 });
 
 app.mount('#root');
+
+
