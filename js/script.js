@@ -20,7 +20,17 @@ console.log('VUE OK', Vue);
 const app = Vue.createApp({
     data(){
         return{
+            currentIndex: 0,
             data
+        }
+    },
+    methods: {
+        goTo(target){
+            if(target === 'next'){
+                this.currentIndex = this.currentIndex === this.data.length - 1 ? 0 : ++this.currentIndex;
+            }else{
+                this.currentIndex = this.currentIndex === 0 ? this.data.length - 1 : --this.currentIndex;
+            }
         }
     }
 });
