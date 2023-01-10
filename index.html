@@ -17,7 +17,7 @@
 </head>
 <body>
     <main class="container d-flex justify-content-center align-items-center" id="root">
-        <div id="carousel" class="d-flex">
+        <div id="carousel" class="d-flex" @mouseover="hover = true" @mouseleave="hover = false">
             <div id="carousel-img-container">
                 <div class="img-card" v-for="(pic, i) in data" v-show="currentIndex === i">
                     <img :src="pic.image" :alt="pic.title">

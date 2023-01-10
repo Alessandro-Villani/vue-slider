@@ -21,7 +21,9 @@ const app = Vue.createApp({
     data(){
         return{
             currentIndex: 0,
-            data
+            data,
+            hover: false,
+            intervalId: null
         }
     },
     methods: {
@@ -35,13 +37,26 @@ const app = Vue.createApp({
             }
         },
         autoplay(){
-            setInterval(() => {
+            this.intervalId = setInterval(() => {
                 this.goTo('next');
             }, 3000)
+        },
+        stopInterval() {
+            clearInterval(this.intervalId);
         }
     },
     mounted(){
-        this.autoplay()
+        
+        this.autoplay();
+    },
+    watch:{
+        hover: function(val){
+            if(val){
+                this.stopInterval();
+            }else{
+                this.autoplay();
+            }
+        }
     }
 });
 

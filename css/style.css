@@ -30,7 +30,8 @@ main{
 #carousel{
     height: 300px;
     width: 80%;
-    margin: auto;    
+    margin: auto;
+    cursor: pointer;    
 }
 
 #carousel-img-container{
